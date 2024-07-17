@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Homepage />,
+        element: <Homepage />,     
       },
       {
         path: "/connexion",
@@ -31,11 +31,12 @@ const router = createBrowserRouter([
       {
         path: "/enduo",
         element: <Duo />,
-        loader: async () => fetch(`${ApiUrl}/api/games`),
+        loader: async () => fetch(`${ApiUrl}/api/games`),  
       },
       {
         path: "/multijoueurs",
         element: <Multi />,
+        loader: async () => fetch(`${ApiUrl}/api/games`),  
       },
     ],
   },
