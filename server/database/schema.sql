@@ -1,12 +1,13 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
-  email varchar(255) not null unique,
-  password varchar(255) not null
-);
 
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null,
-  user_id int unsigned not null,
-  foreign key(user_id) references user(id)
+CREATE TABLE game (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  tagline VARCHAR(255) NOT NULL,
+  overview TEXT NOT NULL,
+  illustration VARCHAR(255) NOT NULL, 
+  background VARCHAR(255),
+  player VARCHAR(10) NOT NULL,
+  duration INT NOT NULL,
+  age VARCHAR(4) NOT NULL,
+  duo BOOLEAN NOT NULL
 );

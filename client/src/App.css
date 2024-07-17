@@ -1,22 +1,10 @@
 @font-face {
-  font-family: "Poppins Black";
-  src: url("../src/assets/poppins/Poppins-Black.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins Bold";
-  src: url("../src/assets/poppins/Poppins-Bold.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "Poppins Regular";
   src: url("../src/assets/poppins/Poppins-Regular.ttf") format("truetype");
 }
 
 :root {
   --font-regular: "Poppins Regular", sans-serif;
-  --font-bold: "Poppins Bold", sans-serif;
-  --font-black: "Poppins Black", sans-serif;
   --bakcground-color: #fff8dd;
   --green: #3c7f72;
   --red: #992800;

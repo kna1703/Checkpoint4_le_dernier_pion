@@ -8,6 +8,9 @@ import Duo from "./pages/Duo/Duo";
 import Multi from "./pages/Multi/Multi";
 import App from "./App";
 
+const ApiUrl = import.meta.env.VITE_API_URL;
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Homepage />,
+        element: <Homepage />,     
       },
       {
         path: "/connexion",
@@ -28,10 +31,12 @@ const router = createBrowserRouter([
       {
         path: "/enduo",
         element: <Duo />,
+        loader: async () => fetch(`${ApiUrl}/api/games`),  
       },
       {
         path: "/multijoueurs",
         element: <Multi />,
+        loader: async () => fetch(`${ApiUrl}/api/games`),  
       },
     ],
   },

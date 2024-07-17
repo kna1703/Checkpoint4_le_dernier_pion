@@ -1,0 +1,25 @@
+.contactContainer {
+  padding: 3rem 20rem 3rem 20rem;
+}
+
+.contactBloc {
+  background-color: var(--bakcground-color);
+  opacity: 0.8;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 25px;
+  color: var(--yellow);
+  text-align: center;
+}
+
+h4 {
+  font-weight: 600;
+  color: var(--red);
+}
+.contactForm {
+  background-color: var(--bakcground-color);
+}
