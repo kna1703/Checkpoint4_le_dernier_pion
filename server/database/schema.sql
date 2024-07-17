@@ -8,5 +8,6 @@ CREATE TABLE game (
   background VARCHAR(255),
   player VARCHAR(10) NOT NULL,
   duration INT NOT NULL,
-  age VARCHAR(4) NOT NULL
+  age VARCHAR(4) NOT NULL,
+  duo BOOLEAN NOT NULL
 );

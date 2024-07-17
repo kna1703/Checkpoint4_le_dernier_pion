@@ -19,6 +19,7 @@ class GameSeeder extends AbstractSeeder {
             player: "2",
             duration:30,
             age: "10+",
+            duo:1,
         },
         {
             name : "Patchwork",
@@ -29,6 +30,7 @@ class GameSeeder extends AbstractSeeder {
             player:"2",
             duration:30,
             age: "8+",
+            duo:1,
         },
         {
             name : "Jaipur",
@@ -39,6 +41,7 @@ class GameSeeder extends AbstractSeeder {
             player:"2",
             duration:30,
             age: "12+",
+            duo:1,
         },
         {
             name : "Star Realms",
@@ -49,6 +52,7 @@ class GameSeeder extends AbstractSeeder {
             player:"2",
             duration:20,
             age: "12+",
+            duo:1,
         },
         {
             name : "Schotten Totten",
@@ -59,6 +63,7 @@ class GameSeeder extends AbstractSeeder {
             player:"2",
             duration:20,
             age: "8+",
+            duo:1,
         },
         {
             name : "Dixit",
@@ -69,6 +74,7 @@ class GameSeeder extends AbstractSeeder {
             player:"3-6",
             duration:30,
             age: "8+",
+            duo:0,
         },
         {
             name : "Oriflamme",
@@ -79,6 +85,7 @@ class GameSeeder extends AbstractSeeder {
             player:"3-5",
             duration:30,
             age: "10+",
+            duo:0,
         },
         {
             name : "Codenames",
@@ -89,6 +96,7 @@ class GameSeeder extends AbstractSeeder {
             player:"4-8",
             duration:30,
             age: "14+",
+            duo:0,
         },
         {
             name : "Skull King",
@@ -99,6 +107,7 @@ class GameSeeder extends AbstractSeeder {
             player:"é-6",
             duration:30,
             age: "8+",
+            duo:0,
         },
         {
             name : "Love Letter",
@@ -109,6 +118,7 @@ class GameSeeder extends AbstractSeeder {
             player:"é-6",
             duration:20,
             age: "10+",
+            duo:0,
         }, 
     ];
     // Generate and insert fake data into the 'user' table
