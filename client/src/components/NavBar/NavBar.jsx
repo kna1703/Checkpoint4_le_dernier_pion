@@ -15,13 +15,15 @@ function NavBar() {
         </Link>
       </div>
       <div className={styles.containRight}>
-        <Link to="/enduo">
+        <Link to="/">
           <img src={Game} alt="Jeux" className={styles.player} />
         </Link>
         <Link to="/connexion">
           <img src={Account} alt="Compte" className={styles.player} />
         </Link>
+        <Link to="/suggestion">
         <img src={Rate} alt="Contact" className={styles.player} />
+        </Link>
       </div>
     </div>
   );
