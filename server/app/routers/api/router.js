@@ -10,6 +10,10 @@ const gameRouter = require("./game/router");
 
 router.use("/games", gameRouter);
 
+const commentRouter = require("./comment/router");
+
+router.use("/comments", commentRouter);
+
 const userRouter = require("./user/router");
 
 router.use("/users/", userRouter);

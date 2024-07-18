@@ -22,7 +22,7 @@ function NavBar() {
           <img src={Account} alt="Compte" className={styles.player} />
         </Link>
         <Link to="/suggestion">
-        <img src={Rate} alt="Contact" className={styles.player} />
+          <img src={Rate} alt="Contact" className={styles.player} />
         </Link>
       </div>
     </div>

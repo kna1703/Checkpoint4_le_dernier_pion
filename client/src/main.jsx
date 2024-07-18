@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Connexion from "./pages/Connexion/Connexion";
-import Suggestion from "./pages/Suggestion/Suggestion";
 import Inscription from "./pages/Inscription/Inscription";
 import Duo from "./pages/Categories/Duo";
+import Comment from "./pages/Comment/Comment";
 import App from "./App";
 
 const ApiUrl = import.meta.env.VITE_API_URL;
@@ -29,7 +29,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/suggestion",
-        element: <Suggestion />,
+        element: <Comment />,
+        loader: async () => fetch(`${ApiUrl}/api/comments`)
       },
     ],
   },
