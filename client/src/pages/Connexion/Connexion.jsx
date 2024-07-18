@@ -25,7 +25,7 @@ function Connexion() {
     }
 
     try {
-      const response = await fetch(`${ApiUrl}/api/login`, {
+      const response = await fetch(`${ApiUrl}/api/auth`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
