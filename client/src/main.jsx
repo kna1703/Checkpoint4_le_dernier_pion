@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/suggestion",
         element: <Comment />,
-        loader: async () => fetch(`${ApiUrl}/api/comments`)
+        loader: async () => fetch(`${ApiUrl}/api/comments`),
       },
     ],
   },
