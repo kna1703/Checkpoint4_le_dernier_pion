@@ -9,9 +9,9 @@ const login = async (req, res, next) => {
     console.info(req.body);
     console.info(req.body.pseudo);
     // Fetch a specific user from the database based on the provided email
-    const user = await tables.user.readByPseudoWithPassword(req.body.pseudo);
+    const user = await tables.user.readConnexion(req.body.pseudo);
     console.info(user);
-    if (user === null) {
+    if (user === null || user.length === 0) {
       res.sendStatus(422);
       return;
     }
