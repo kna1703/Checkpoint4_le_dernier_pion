@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
 import styles from "./Duo.module.css";
 
 function Duo() {
@@ -7,7 +6,6 @@ function Duo() {
   const duoGames = allGames.filter(game => game.duo);
   return (
     <div>
-      <NavBar />
       <div>
       {duoGames.map((game) => (
         <div key={game.id} className={styles.listGames}>
