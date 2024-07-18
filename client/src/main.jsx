@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import Connexion from "./pages/Connexion/Connexion";
 import Inscription from "./pages/Inscription/Inscription";
-import Duo from "./pages/Duo/Duo";
-import Multi from "./pages/Multi/Multi";
+import Duo from "./pages/Categories/Duo";
+import Multi from "./pages/Categories/Multi";
 import App from "./App";
 
 const ApiUrl = import.meta.env.VITE_API_URL;
