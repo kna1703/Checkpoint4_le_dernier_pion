@@ -10,7 +10,11 @@ function Duo() {
         {duoGames.map((game) => (
           <div key={game.id} className={styles.listGames}>
             <p>{game.name}</p>
-            <p>{game.overview}</p>
+            <img
+              src={game.illustration}
+              alt={game.name}
+              className={styles.fond}
+            />
           </div>
         ))}
       </div>
