@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
 import styles from "./Multi.module.css";
 
 function Multi() {
@@ -7,7 +6,6 @@ function Multi() {
   const multiGames = allGames.filter(game => !game.duo);
   return (
     <div>
-      <NavBar />
       <div>
       {multiGames.map((game) => (
         <div key={game.id} className={styles.listGames}>

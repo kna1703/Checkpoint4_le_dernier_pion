@@ -1,6 +1,5 @@
 import { Link, Form, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import NavBar from "../../components/NavBar/NavBar";
 import Validation from "./InscriptionValidation";
 import styles from "./Inscription.module.css";
 
@@ -54,9 +53,6 @@ function Inscription() {
   };
 
   return (
-    <div>
-      <NavBar />
-
       <div className={styles.contactContainer}>
         <div className={styles.contactBloc}>
           <h2>Inscription</h2>
@@ -126,7 +122,6 @@ function Inscription() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 // import { useUserContext } from "../../contexts/UserContext";
-import NavBar from "../../components/NavBar/NavBar";
 import styles from "./Connexion.module.css";
 
 function Connexion() {
@@ -60,9 +59,6 @@ function Connexion() {
 
   return (
     <div>
-      <div className={styles.logo}>
-        <NavBar />
-      </div>
       <div className={styles.contactContainer}>
         <div className={styles.contactBloc}>
           <p className={styles.title}>CONNEXION</p>
