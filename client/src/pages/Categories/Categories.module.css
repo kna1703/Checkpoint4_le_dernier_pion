@@ -1,0 +1,35 @@
+.allBloc {
+  background-color: var(--bakcground-color);
+  opacity: 0.9;
+  border-radius: 15px;
+}
+
+.allGames {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.image {
+  height: 8rem;
+}
+
+.gameName {
+  font-family: var(--font-regular);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.cat {
+  font-family: var(--font-regular);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--yellow);
+  text-align: center;
+}
+
+@media (min-width: 550px) {
+}
