@@ -57,9 +57,9 @@ function Connexion() {
   };
 
   return (
-    <div>
-      <div className={styles.contactContainer}>
-        <div className={styles.contactBloc}>
+    <div className={styles.contain}>
+      <div className={styles.allBloc}>
+        <div className={styles.bloc}>
           <p className={styles.title}>CONNEXION</p>
           <form onSubmit={handleLogin} className={styles.contactForm}>
             <div className={styles.rowFormRow}>

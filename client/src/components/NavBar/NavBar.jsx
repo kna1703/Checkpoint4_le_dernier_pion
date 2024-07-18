@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
+import Game from "../../assets/images/game.png";
+import Account from "../../assets/images/account.png";
+import Rate from "../../assets/images/rate.png";
+
 import styles from "./NavBar.module.css";
 
 function NavBar() {
@@ -12,14 +16,12 @@ function NavBar() {
       </div>
       <div className={styles.containRight}>
         <Link to="/enduo">
-          <p className={styles.duo}>En duo</p>
-        </Link>
-        <Link to="/multijoueurs">
-          <p className={styles.multi}>Multi-joueurs</p>
+          <img src={Game} alt="Jeux" className={styles.player} />
         </Link>
         <Link to="/connexion">
-          <p className={styles.compte}>Compte</p>
+          <img src={Account} alt="Compte" className={styles.player} />
         </Link>
+        <img src={Rate} alt="Contact" className={styles.player} />
       </div>
     </div>
   );

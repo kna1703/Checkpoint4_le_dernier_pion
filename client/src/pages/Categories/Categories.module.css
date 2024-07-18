@@ -1,7 +1,20 @@
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .allBloc {
   background-color: var(--bakcground-color);
   opacity: 0.9;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem 2rem 3rem;
+  margin-top: 2rem;
+  min-width: 60%;
 }
 
 .allGames {
@@ -31,5 +44,20 @@
   text-align: center;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 768px) {
+  .allBloc {
+    max-width: 70%;
+  }
+
+  .allGames {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .image {
+    height: 10rem;
+  }
 }
