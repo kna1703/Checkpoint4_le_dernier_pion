@@ -10,6 +10,17 @@ const gameRouter = require("./game/router");
 
 router.use("/games", gameRouter);
 
+const userRouter = require("./user/router");
+
+router.use("/users/", userRouter)
+
+const authRouter = require("./auth/router");
+
+router.use("/auth", authRouter);
+
+
+
+
 /* ************************************************************************* */
 
 module.exports = router;

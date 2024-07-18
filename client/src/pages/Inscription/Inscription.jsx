@@ -1,10 +1,13 @@
-import { Link, Form, useNavigate } from "react-router-dom";
+import { Link, Form } from "react-router-dom";
 import { useState } from "react";
 import Validation from "./InscriptionValidation";
 import styles from "./Inscription.module.css";
 
+const ApiUrl = import.meta.env.VITE_API_URL;
+
+
 function Inscription() {
-  const navigate = useNavigate();
+
 
   const [values, setValues] = useState({
     pseudo: "",
@@ -30,7 +33,7 @@ function Inscription() {
 
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const response = await fetch(`${URL}/api/users`, {
+        const response = await fetch(`${ApiUrl}/api/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -44,8 +47,6 @@ function Inscription() {
         if (response.status === 200) {
           throw new Error("Erreur lors de l'inscription");
         }
-
-        navigate("/admin");
       } catch (err) {
         console.error("Erreur lors de la requête d'inscription:", err);
       }
@@ -111,7 +112,7 @@ function Inscription() {
             </div>
 
             <button className={styles.buttonSubmit} type="submit">
-              <p className={styles.inscriptionButton}>Inscription</p>
+              <p className={styles.inscriptionButton}>S'inscrire</p>
             </button>
           </Form>
 

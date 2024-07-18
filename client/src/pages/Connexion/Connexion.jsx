@@ -1,11 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { useUserContext } from "../../contexts/UserContext";
+import { useUserContext } from "../../components/contexts/UserContext";
 import styles from "./Connexion.module.css";
+
+const ApiUrl = import.meta.env.VITE_API_URL;
 
 function Connexion() {
   const navigate = useNavigate();
-  // const { login } = useUserContext();
+  const { login } = useUserContext();
   const [loginInfos, setLoginInfos] = useState({
     pseudo: "",
     password: "",
@@ -23,8 +25,7 @@ function Connexion() {
     }
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/login`,
+      const response = await fetch(`${ApiUrl}/api/login`,
         {
           method: "POST",
           credentials: "include",
@@ -38,7 +39,7 @@ function Connexion() {
         console.info("API response:", responseData);
 
         if (responseData.user) {
-          // login(responseData.user);
+          login(responseData.user);
 
           if (loginInfos.pseudo === "admin") {
             navigate("/admin");
@@ -89,7 +90,7 @@ function Connexion() {
               </div>
             </div>
             <button type="submit">
-              <p>Connexion</p>
+              <p>Se connecter</p>
             </button>
           </form>
           <div className={styles.textUnderButton}>
