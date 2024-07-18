@@ -19,3 +19,9 @@ CREATE TABLE user(
   hashed_password VARCHAR(255) NOT NULL,
   role VARCHAR(20) DEFAULT 'user'
 );
+
+CREATE TABLE comment(
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  pseudo VARCHAR(30) NOT NULL,
+  comments TEXT NOT NULL
+);

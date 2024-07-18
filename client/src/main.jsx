@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Homepage from "./pages/Homepage/Homepage";
 import Connexion from "./pages/Connexion/Connexion";
 import Inscription from "./pages/Inscription/Inscription";
 import Duo from "./pages/Categories/Duo";
-import Multi from "./pages/Categories/Multi";
+import Comment from "./pages/Comment/Comment";
 import App from "./App";
 
 const ApiUrl = import.meta.env.VITE_API_URL;
@@ -17,7 +16,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Homepage />,
+        element: <Duo />,
+        loader: async () => fetch(`${ApiUrl}/api/games`),
       },
       {
         path: "/connexion",
@@ -28,14 +28,9 @@ const router = createBrowserRouter([
         element: <Inscription />,
       },
       {
-        path: "/enduo",
-        element: <Duo />,
-        loader: async () => fetch(`${ApiUrl}/api/games`),
-      },
-      {
-        path: "/multijoueurs",
-        element: <Multi />,
-        loader: async () => fetch(`${ApiUrl}/api/games`),
+        path: "/suggestion",
+        element: <Comment />,
+        loader: async () => fetch(`${ApiUrl}/api/comments`)
       },
     ],
   },

@@ -2,35 +2,26 @@
 const tables = require("../../database/tables");
 
 // The B of BREAD - Browse (Read All) operation
-const browse = async (req, res, next) => {
-  try {
-    // Fetch all items from the database
-    const items = await tables.item.readAll();
+const browse = async (req, res) => {
+  // Fetch all items from the database
+  const comments = await tables.comment.readAll();
 
-    // Respond with the items in JSON format
-    res.json(items);
-  } catch (err) {
-    // Pass any errors to the error-handling middleware
-    next(err);
-  }
+  // Respond with the items in JSON format
+  res.json(comments);
+  // Pass any errors to the error-handling middleware
 };
 
 // The R of BREAD - Read operation
-const read = async (req, res, next) => {
-  try {
-    // Fetch a specific item from the database based on the provided ID
-    const item = await tables.item.read(req.params.id);
+const read = async (req, res) => {
+  // Fetch a specific item from the database based on the provided ID
+  const comment = await tables.comment.read(req.params.id);
 
-    // If the item is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the item in JSON format
-    if (item == null) {
-      res.sendStatus(404);
-    } else {
-      res.json(item);
-    }
-  } catch (err) {
-    // Pass any errors to the error-handling middleware
-    next(err);
+  // If the item is not found, respond with HTTP 404 (Not Found)
+  // Otherwise, respond with the item in JSON format
+  if (comment !== null) {
+    res.json(comment);
+  } else {
+    res.sendStatus(404);
   }
 };
 
@@ -44,7 +35,7 @@ const add = async (req, res, next) => {
 
   try {
     // Insert the item into the database
-    const insertId = await tables.item.create(item);
+    const insertId = await tables.comment.create(item);
 
     // Respond with HTTP 201 (Created) and the ID of the newly inserted item
     res.status(201).json({ insertId });

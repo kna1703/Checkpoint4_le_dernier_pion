@@ -10,6 +10,8 @@ function Multi() {
         <div className={styles.bloc}>
           <p className={styles.cat}>MULTI-JOUEURS</p>
           <div className={styles.allGames}>
+
+            
             {multiGames.map((game) => (
               <div key={game.id} className={styles.listGames}>
                 <img
