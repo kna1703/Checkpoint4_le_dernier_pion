@@ -1,6 +1,6 @@
 .containParents {
   background-color: var(--bakcground-color);
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,4 +31,8 @@
 
 .compte {
   color: var(--red);
+}
+
+.player {
+  height: 2rem;
 }

@@ -1,12 +1,20 @@
-.contactContainer {
-  padding: 3rem 20rem 3rem 20rem;
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
 }
 
-.contactBloc {
+.allBloc {
   background-color: var(--bakcground-color);
-  opacity: 0.8;
-  border-radius: 20px;
-  padding: 2rem;
+  opacity: 0.9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem 2rem 3rem;
+  margin-top: 2rem;
 }
 
 .title {
@@ -22,4 +30,14 @@ h4 {
 }
 .contactForm {
   background-color: var(--bakcground-color);
+}
+
+@media (min-width: 768px) {
+  .allBloc {
+    max-width: 80%;
+  }
+
+  .image {
+    height: 10rem;
+  }
 }
