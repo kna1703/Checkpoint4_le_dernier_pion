@@ -14,15 +14,15 @@ class GameRepository extends AbstractRepository {
     const [result] = await this.database.query(
       `insert into ${this.table} (name, tagline, overview, illustration, background, player, duration, age, duo) values (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        game.name, 
-        game.tagline, 
-        game.overview, 
-        game.illustration, 
-        game.background, 
-        game.player, 
-        game.duration, 
+        game.name,
+        game.tagline,
+        game.overview,
+        game.illustration,
+        game.background,
+        game.player,
+        game.duration,
         game.age,
-        game.duo
+        game.duo,
       ]
     );
 

@@ -25,14 +25,12 @@ function Connexion() {
     }
 
     try {
-      const response = await fetch(`${ApiUrl}/api/login`,
-        {
-          method: "POST",
-          credentials: "include",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(loginInfos),
-        }
-      );
+      const response = await fetch(`${ApiUrl}/api/login`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginInfos),
+      });
 
       if (response.status === 200) {
         const responseData = await response.json();

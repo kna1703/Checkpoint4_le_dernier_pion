@@ -10,17 +10,17 @@ class UserSeeder extends AbstractSeeder {
 
   run() {
     const users = [
-        {
-            pseudo: "",
-            email:"",
-            hashed_password:"",
-            role:"",
-        },
+      {
+        pseudo: "",
+        email: "",
+        hashed_password: "",
+        role: "",
+      },
     ];
     // Generate and insert fake data into the 'user' table
-   users.forEach((user) => {
-    this.insert(user);
-   });
+    users.forEach((user) => {
+      this.insert(user);
+    });
   }
 }
 

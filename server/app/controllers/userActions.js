@@ -59,7 +59,6 @@ const add = async (req, res, next) => {
   }
 };
 
-
 // The D of BREAD - Destroy (Delete) operation
 // This operation is not yet implemented
 

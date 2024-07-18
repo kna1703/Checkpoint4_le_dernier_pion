@@ -5,10 +5,7 @@ import styles from "./Inscription.module.css";
 
 const ApiUrl = import.meta.env.VITE_API_URL;
 
-
 function Inscription() {
-
-
   const [values, setValues] = useState({
     pseudo: "",
     email: "",
@@ -54,75 +51,73 @@ function Inscription() {
   };
 
   return (
-      <div className={styles.contactContainer}>
-        <div className={styles.contactBloc}>
-          <h2>Inscription</h2>
-          <Form
-            method="post"
-            className={styles.contactForm}
-            onSubmit={handleSubmit}
-          >
-            <label htmlFor="pseudo" className={styles.rowFormRow}>
-              <p className={styles.titleForm}>Pseudo</p>
-            </label>
-            <div className={styles.pseudoInput}>
-              <input
-                className={styles.textInput}
-                type="text"
-                placeholder="Votre pseudo"
-                name="pseudo"
-                value={values.pseudo}
-                onChange={handleInput}
-              />
-              <p className={styles.errorsField}>
-                {errors.pseudo !== undefined && <span>{errors.pseudo}</span>}
-              </p>
-            </div>
-            <label htmlFor="email" className={styles.rowFormRow}>
-              <p className={styles.titleForm}>Adresse mail</p>
-            </label>
-            <div className={styles.pseudoInput}>
-              <input
-                type="email"
-                placeholder="Votre adresse mail"
-                name="email"
-                value={values.email}
-                onChange={handleInput}
-              />
-              <p className={styles.errorsField}>
-                {errors.email !== undefined && <span>{errors.email}</span>}
-              </p>
-            </div>
-            <label htmlFor="password" className={styles.rowFormRow}>
-              <p className={styles.titleForm}>Mot de passe</p>
-            </label>
-            <div className={styles.pseudoInput}>
-              <input
-                type="password"
-                placeholder="Votre mot de passe"
-                name="password"
-                value={values.password}
-                onChange={handleInput}
-              />
-              <p className={styles.errorsField}>
-                {errors.password !== undefined && (
-                  <span>{errors.password}</span>
-                )}
-              </p>
-            </div>
-
-            <button className={styles.buttonSubmit} type="submit">
-              <p className={styles.inscriptionButton}>S'inscrire</p>
-            </button>
-          </Form>
-
-          <div className={styles.textUnderButton}>
-            <p className={styles.underButton}>
-              J'ai déjà un compte. <Link to="/connexion">Connexion</Link>
+    <div className={styles.contactContainer}>
+      <div className={styles.contactBloc}>
+        <h2>Inscription</h2>
+        <Form
+          method="post"
+          className={styles.contactForm}
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="pseudo" className={styles.rowFormRow}>
+            <p className={styles.titleForm}>Pseudo</p>
+          </label>
+          <div className={styles.pseudoInput}>
+            <input
+              className={styles.textInput}
+              type="text"
+              placeholder="Votre pseudo"
+              name="pseudo"
+              value={values.pseudo}
+              onChange={handleInput}
+            />
+            <p className={styles.errorsField}>
+              {errors.pseudo !== undefined && <span>{errors.pseudo}</span>}
             </p>
           </div>
+          <label htmlFor="email" className={styles.rowFormRow}>
+            <p className={styles.titleForm}>Adresse mail</p>
+          </label>
+          <div className={styles.pseudoInput}>
+            <input
+              type="email"
+              placeholder="Votre adresse mail"
+              name="email"
+              value={values.email}
+              onChange={handleInput}
+            />
+            <p className={styles.errorsField}>
+              {errors.email !== undefined && <span>{errors.email}</span>}
+            </p>
+          </div>
+          <label htmlFor="password" className={styles.rowFormRow}>
+            <p className={styles.titleForm}>Mot de passe</p>
+          </label>
+          <div className={styles.pseudoInput}>
+            <input
+              type="password"
+              placeholder="Votre mot de passe"
+              name="password"
+              value={values.password}
+              onChange={handleInput}
+            />
+            <p className={styles.errorsField}>
+              {errors.password !== undefined && <span>{errors.password}</span>}
+            </p>
+          </div>
+
+          <button className={styles.buttonSubmit} type="submit">
+            <p className={styles.inscriptionButton}>S'inscrire</p>
+          </button>
+        </Form>
+
+        <div className={styles.textUnderButton}>
+          <p className={styles.underButton}>
+            J'ai déjà un compte. <Link to="/connexion">Connexion</Link>
+          </p>
         </div>
       </div>
+    </div>
   );
 }
 
