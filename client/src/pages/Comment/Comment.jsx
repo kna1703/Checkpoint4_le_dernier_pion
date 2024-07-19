@@ -1,18 +1,23 @@
+// Importation des hooks et styles nécessaires
 import { useLoaderData, Form } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Comment.module.css";
 
 function Comment() {
+  // Récupération des données via le hook useLoaderData, qui est supposé charger les commentaires depuis une route.
   const allComments = useLoaderData();
   const ApiUrl = import.meta.env.VITE_API_URL;
 
+  // Déclaration de l'état pour le formulaire de commentaire
   const [commentForm, setCommentForm] = useState({
     pseudo: "",
     comments: "",
   });
 
+  // Déclaration de l'état pour le message de succès
   const [success, setSuccess] = useState(null);
 
+  // Fonction pour gérer les changements dans les champs du formulaire
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCommentForm({
@@ -21,10 +26,12 @@ function Comment() {
     });
   };
 
+  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      // Envoi de la requête POST à l'API pour ajouter un commentaire
       const response = await fetch(`${ApiUrl}/api/comments`, {
         method: "POST",
         credentials: "include",
@@ -34,12 +41,15 @@ function Comment() {
         body: JSON.stringify(commentForm),
       });
 
+      // Vérification de la réponse du serveur
       if (response.ok) {
         setSuccess("Suggestion envoyée avec succès !");
+        // Réinitialisation du formulaire
         setCommentForm({
           pseudo: "",
           comments: "",
         });
+        // Rechargement de la page pour afficher le nouveau commentaire
         window.location.reload();
       } else {
         setSuccess("Erreur lors de l'envoi de la suggestion!");
@@ -49,12 +59,14 @@ function Comment() {
     }
   };
 
+
   return (
     <div className={styles.allContain}>
       <div className={styles.allBloc}>
         <div className={styles.containFirst}>
           <p className={styles.titre}>Des remarques, suggestions ?</p>
           <div className={styles.commentaire}>
+            {/* Boucle sur les commentaires pour les afficher */}
             {allComments.map((comment) => (
               <div key={comment.id} className={styles.id}>
                 <p className={styles.pseudo}>{comment.pseudo}: </p>
@@ -90,6 +102,7 @@ function Comment() {
                   className={styles.text}
                 />
               </div>
+              {/* Affichage du message de succès */}
               {success && <p>{success}</p>}
               <div className={styles.add}>
                 <button type="submit" className={styles.button}>

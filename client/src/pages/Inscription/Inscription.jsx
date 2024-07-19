@@ -1,33 +1,40 @@
+
 import { Link, Form } from "react-router-dom";
 import { useState } from "react";
 import Validation from "./InscriptionValidation";
 import styles from "./Inscription.module.css";
 
+// Récupération de l'URL de l'API depuis les variables d'environnement
 const ApiUrl = import.meta.env.VITE_API_URL;
 
 function Inscription() {
+  // Déclaration de l'état pour stocker les valeurs du formulaire
   const [values, setValues] = useState({
     pseudo: "",
     email: "",
     password: "",
   });
 
+  // Déclaration de l'état pour stocker les erreurs de validation
   const [errors, setErrors] = useState({});
 
+  // Fonction pour gérer les changements dans les champs de saisie
   const handleInput = (event) => {
     setValues((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
     }));
-    setErrors(Validation(values));
+    setErrors(Validation(values)); // Validation des champs après chaque changement
   };
 
+  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const validationErrors = Validation(values);
-    setErrors(validationErrors);
+    setErrors(validationErrors); // Validation des champs avant soumission
 
+    // Si aucune erreur de validation, envoi des données à l'API
     if (Object.keys(validationErrors).length === 0) {
       try {
         const response = await fetch(`${ApiUrl}/api/users`, {
@@ -41,7 +48,9 @@ function Inscription() {
             password: values.password,
           }),
         });
-        if (response.status === 200) {
+
+        // Gestion des erreurs de réponse de l'API
+        if (response.status !== 200) {
           throw new Error("Erreur lors de l'inscription");
         }
       } catch (err) {
@@ -110,7 +119,6 @@ function Inscription() {
             <p className={styles.inscriptionButton}>S'inscrire</p>
           </button>
         </Form>
-
         <div className={styles.textUnderButton}>
           <p className={styles.underButton}>
             J'ai déjà un compte. <Link to="/connexion">Connexion</Link>
