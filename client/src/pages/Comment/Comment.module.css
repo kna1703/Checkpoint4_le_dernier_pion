@@ -1,0 +1,160 @@
+.allContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.allBloc {
+  background-color: var(--bakcground-color);
+  opacity: 0.9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem 2rem 3rem;
+  margin-top: 2rem;
+  min-width: 50%;
+  max-width: 70%;
+}
+
+.containFirst {
+  margin-bottom: 1rem;
+}
+
+.titre {
+  font-family: var(--font-regular);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--yellow);
+  text-align: center;
+}
+
+.id {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: solid var(--red);
+  border-radius: 8px;
+  margin: 1rem;
+  padding: 5px;
+}
+
+.pseudo,
+.comments {
+  font-family: var(--font-regular);
+}
+
+.pseudo {
+  padding-right: 8px;
+  font-size: 18px;
+  color: var(--red);
+  font-weight: 600;
+}
+
+button {
+  background-color: var(--yellow);
+
+  color: var(--red);
+  width: 100px;
+}
+
+button[type="submit"] {
+  width: 80%;
+  background-color: var(--yellow);
+  color: var(--red);
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 1rem 0rem 1rem 0rem;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.input {
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 18px;
+  padding-right: 8px;
+  margin-bottom: 1rem;
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.username {
+  border-top: none;
+  border-right: none;
+  border-bottom: solid var(--orange) 1px;
+  border-left: none;
+  width: 200px;
+  height: 30px;
+}
+
+.text {
+  border-top: none;
+  border-right: none;
+  border-bottom: solid var(--orange) 1px;
+  border-left: none;
+  width: 200px;
+  height: 50px;
+}
+
+@media (min-width: 768px) {
+  .allBloc {
+    min-width: 60%;
+    max-width: 80%;
+  }
+
+  .titre {
+    font-family: var(--font-regular);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--yellow);
+    text-align: center;
+  }
+
+  button {
+    background-color: var(--yellow);
+    color: var(--red);
+    width: 100px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    background-color: var(--yellow);
+    color: var(--red);
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 1rem 0rem 1rem 0rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+}

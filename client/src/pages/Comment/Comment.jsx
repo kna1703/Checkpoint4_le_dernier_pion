@@ -1,5 +1,6 @@
 import { useLoaderData, Form } from "react-router-dom";
 import { useState } from "react";
+import styles from "./Comment.module.css";
 
 function Comment() {
   const allComments = useLoaderData();
@@ -10,7 +11,6 @@ function Comment() {
     comments: "",
   });
 
-  const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
   const handleChange = (e) => {
@@ -24,12 +24,6 @@ function Comment() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!commentForm.pseudo || !commentForm.comments) {
-      setError("Tous les champs doivent être remplis.");
-      setSuccess(null);
-      return;
-    }
-
     try {
       const response = await fetch(`${ApiUrl}/api/comments`, {
         method: "POST",
@@ -42,59 +36,70 @@ function Comment() {
 
       if (response.ok) {
         setSuccess("Suggestion envoyée avec succès !");
-        setError(null);
         setCommentForm({
           pseudo: "",
           comments: "",
         });
         window.location.reload();
       } else {
-        setError("Erreur lors de l'envoi de la suggestion!");
-        setSuccess(null);
+        setSuccess("Erreur lors de l'envoi de la suggestion!");
       }
-    // eslint-disable-next-line no-shadow
     } catch (error) {
-      setError("Erreur lors de l'envoi de la suggestion!");
-      setSuccess(null);
+      setSuccess("Erreur lors de l'envoi de la suggestion!");
     }
   };
 
   return (
-    <div>
-      <div>
-        <p>Des suggestions de jeux ?</p>
-        <div>
-          {allComments.map((comment) => (
-            <div key={comment.id}>
-              <p>{comment.pseudo}</p>
-              <p>{comment.comments}</p>
-            </div>
-          ))}
+    <div className={styles.allContain}>
+      <div className={styles.allBloc}>
+        <div className={styles.containFirst}>
+          <p className={styles.titre}>Des remarques, suggestions ?</p>
+          <div className={styles.commentaire}>
+            {allComments.map((comment) => (
+              <div key={comment.id} className={styles.id}>
+                <p className={styles.pseudo}>{comment.pseudo}: </p>
+                <p className={styles.notes}>{comment.comments}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.containSecond}>
+          <div className={styles.form}>
+            <Form onSubmit={handleSubmit}>
+              <div className={styles.input}>
+                <label htmlFor="pseudo" className={styles.label}>
+                  Pseudo
+                </label>
+                <input
+                  onChange={handleChange}
+                  value={commentForm.pseudo}
+                  type="text"
+                  name="pseudo"
+                  className={styles.text}
+                />
+              </div>
+              <div className={styles.input}>
+                <label htmlFor="comments" className={styles.label}>
+                  Commentaire
+                </label>
+                <textarea
+                  onChange={handleChange}
+                  value={commentForm.comments}
+                  name="comments"
+                  className={styles.text}
+                />
+              </div>
+              {success && <p>{success}</p>}
+              <div className={styles.add}>
+                <button type="submit" className={styles.button}>
+                  Soumettre
+                </button>
+              </div>
+            </Form>
+          </div>
         </div>
       </div>
-
-      <Form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="pseudo">Pseudo</label>
-          <input
-            onChange={handleChange}
-            value={commentForm.pseudo}
-            type="text"
-            name="pseudo"
-          />
-        </div>
-        <div>
-          <label htmlFor="comments">Commentaire</label>
-          <textarea
-            onChange={handleChange}
-            value={commentForm.comments}
-            name="comments"
-          />
-        </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {success && <p style={{ color: "green" }}>{success}</p>}
-        <button type="submit">Soumettre</button>
-      </Form>
     </div>
   );
 }
